@@ -1,4 +1,4 @@
-declare type calculateReadTime={
+export declare type CalculateReadTimeType={
     milliseconds: number,
     hour: number
     minute: number
@@ -6,7 +6,7 @@ declare type calculateReadTime={
     timeFormat: string
 }
 
-declare type departedBaseTimeType= {
+export declare type departedBaseTimeType= {
     integerPart: number,
     decimalPart: number
 }

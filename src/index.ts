@@ -1,6 +1,18 @@
-export function calculateReadTime(text: string): calculateReadTime {
+import {CalculateReadTimeType, departedBaseTimeType} from "./result"
+
+export function calculateReadTime(text: string): CalculateReadTimeType {
     let hour: number = 0, minute: number = 0, seconds: number = 0;
     let hourString: string, minuteString: string, secondsString: string;
+
+    if(text.trim().length == 0) {
+        return {
+            milliseconds:0,
+            hour,
+            minute,
+            seconds,
+            timeFormat: `00':00"`
+        }
+    }
 
     const baseTime = calculateBaseTime(text);
 
@@ -22,12 +34,14 @@ export function calculateReadTime(text: string): calculateReadTime {
     minuteString = minute.toString().padStart(2, "0");
     secondsString = seconds.toString().padStart(2, "0");
 
+    const timeFormat = (hour > 0) ? `${hourString}:${minuteString}':${secondsString}"` : `${minuteString}':${secondsString}"`
+
     return {
         milliseconds: timeToMilliSeconds,
         hour,
         minute,
         seconds,
-        timeFormat: `${hourString}:${minuteString}:${secondsString}`    // hh:mm:ss
+        timeFormat    // hh:mm':ss"
     }
 }
 

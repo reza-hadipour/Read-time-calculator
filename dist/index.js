@@ -4,6 +4,15 @@ exports.calculateReadTime = calculateReadTime;
 function calculateReadTime(text) {
     let hour = 0, minute = 0, seconds = 0;
     let hourString, minuteString, secondsString;
+    if (text.trim().length == 0) {
+        return {
+            milliseconds: 0,
+            hour,
+            minute,
+            seconds,
+            timeFormat: `00':00"`
+        };
+    }
     const baseTime = calculateBaseTime(text);
     const { integerPart, decimalPart } = departedBaseTime(baseTime);
     seconds = Math.floor(decimalPart * 60);
@@ -17,12 +26,13 @@ function calculateReadTime(text) {
     hourString = hour.toString().padStart(2, "0");
     minuteString = minute.toString().padStart(2, "0");
     secondsString = seconds.toString().padStart(2, "0");
+    const timeFormat = (hour > 0) ? `${hourString}:${minuteString}':${secondsString}"` : `${minuteString}':${secondsString}"`;
     return {
         milliseconds: timeToMilliSeconds,
         hour,
         minute,
         seconds,
-        timeFormat: `${hourString}:${minuteString}:${secondsString}` // hh:mm:ss
+        timeFormat // hh:mm':ss"
     };
 }
 function calculateBaseTime(text) {
