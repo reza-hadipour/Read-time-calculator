@@ -1,15 +1,20 @@
 {
   "name": "read-time-calculator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "test": "npm run build && jest",
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "Reza Hadipour",
-  "license": "ISC",
+  "keywords": ["ReadTime","Study time","calculate read time", "read time calculator"],
+  "homepage": "https://github.com/reza-hadipour/Read-time-calculator",
+  "author": "Reza Hadipour <Reza.hadipour2002@gmail.com> (https://github.com/reza-hadipour)",
+  "license": "MIT",
   "description": "This package estimate the time needs to study an article.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reza-hadipour/Read-time-calculator.git"
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "jest": "^30.0.4",
