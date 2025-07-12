@@ -1,4 +1,4 @@
-declare type calculateReadTime={
+declare type ICalculateReadTime={
     milliseconds: number,
     hour: number
     minute: number

@@ -451,5 +451,5 @@ Relied upon by more than 17 million developers worldwide, npm is committed to ma
   expect(hour).toEqual(1);
   expect(minute).toEqual(36);
   expect(seconds).toEqual(47);
-  expect(timeFormat).toBe("01:36:47");
+  expect(timeFormat).toBe(`01:36':47"`);
 })
