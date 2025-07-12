@@ -1,5 +1,3 @@
-import {CalculateReadTimeType, departedBaseTimeType} from "../types"
-
 export function calculateReadTime(text: string): CalculateReadTimeType {
     let hour: number = 0, minute: number = 0, seconds: number = 0;
     let hourString: string, minuteString: string, secondsString: string;
@@ -59,4 +57,17 @@ function departedBaseTime(baseTime: number): departedBaseTimeType {
         integerPart,
         decimalPart
     }
+}
+
+export declare type CalculateReadTimeType={
+    milliseconds: number,
+    hour: number
+    minute: number
+    seconds: number
+    timeFormat: string
+}
+
+export declare type departedBaseTimeType= {
+    integerPart: number,
+    decimalPart: number
 }
