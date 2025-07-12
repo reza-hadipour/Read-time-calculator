@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import {CalculateReadTimeType, departedBaseTimeType} from "./result"
 
 export function calculateReadTime(text: string): CalculateReadTimeType {
+=======
+export function calculateReadTime(text: string): ICalculateReadTime {
+>>>>>>> a39bb72a1883c3b3fa7afd05edc5d7d96e6e679e
     let hour: number = 0, minute: number = 0, seconds: number = 0;
     let hourString: string, minuteString: string, secondsString: string;
 
