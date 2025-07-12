@@ -7,7 +7,7 @@
     "build": "tsc"
   },
   "keywords": ["ReadTime","Study time","calculate read time", "read time calculator"],
-  "homepage": "https://github.com/reza-hadipour/Read-time-calculator",
+  "homepage": "https://github.com/reza-hadipour/Read-time-calculator/blob/master/README.md",
   "author": "Reza Hadipour <Reza.hadipour2002@gmail.com> (https://github.com/reza-hadipour)",
   "license": "MIT",
   "description": "This package estimate the time needs to study an article.",
