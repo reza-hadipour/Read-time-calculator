@@ -1,5 +1,1 @@
-export declare class ReadTimeCalculator {
-    private calculateBaseTime;
-    private departedBaseTime;
-    calculateReadTime(text: string): calculateReadTime;
-}
+export declare function calculateReadTime(text: string): calculateReadTime;

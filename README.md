@@ -1,56 +1,112 @@
 # Read Time Calculator
 
-A simple and efficient Node.js package to estimate the time needed to read an article or any given text. This package calculates the reading time based on an average reading speed of 200 words per minute and returns the time in a detailed format.
+Estimate the time it takes to study or read an article based on its word count.
 
-## Installation
+This lightweight Node.js package calculates the approximate reading duration for a given text input, returning both numeric and formatted time details. Perfect for content platforms, educational tools, blogging engines, or productivity apps.
 
-You can install the package via npm:
+---
+
+## 🛠️ Installation
 
 ```bash
-npm install read-time-calculator
+npm install calculate-read-time
 ```
 
-## Usage
+---
 
-Import the `ReadTimeCalculator` class, create an instance, and use the `calculateReadTime` method by passing the text you want to estimate the reading time for.
+## 🚀 Usage
 
-```javascript
-const { ReadTimeCalculator } = require('read-time-calculator');
+### ✅ JavaScript Example
 
-const calculator = new ReadTimeCalculator();
+```js
+const { calculateReadTime } = require('calculate-read-time');
 
-const text = "Your article or text content goes here.";
+const article = `Your article text goes here...`;
+const result = calculateReadTime(article);
 
-const readTime = calculator.calculateReadTime(text);
-
-console.log(readTime.timeFormat); // => 01:23:55
+console.log(result.timeFormat); // Example: "00:03:15"
+console.log(result); // Full breakdown
 ```
 
-## API
+### ✅ TypeScript Example
 
-### `calculateReadTime(text: string)`
+```ts
+import { calculateReadTime } from 'calculate-read-time';
 
-Calculates the estimated reading time for the given text.
+const article = `Your article text goes here...`;
+const result = calculateReadTime(article);
 
-**Parameters:**
+console.log(result.timeFormat); // "00:03:15"
+console.log(result);
+/*
+{
+  milliseconds: 195000,
+  hour: 0,
+  minute: 3,
+  seconds: 15,
+  timeFormat: "00:03:15"
+}
+*/
+```
 
-- `text` (string): The text content to calculate the reading time for.
+---
 
-**Returns:**
+## 📦 Output Structure
 
-An object containing:
+```ts
+{
+  milliseconds: number,
+  hour: number,
+  minute: number,
+  seconds: number,
+  timeFormat: string // "hh:mm:ss"
+}
+```
 
-- `milliseconds` (number): Total reading time in milliseconds.
-- `hour` (number): Hours part of the reading time.
-- `minute` (number): Minutes part of the reading time.
-- `seconds` (number): Seconds part of the reading time.
-- `timeFormat` (string): Formatted time string in `hh:mm:ss` format.
+---
 
-## Repository and Author
+## 📈 How It Works
+
+- Splits the input text by words.
+- Assumes an average reading speed of **200 words per minute**.
+- Converts estimated time into milliseconds.
+- Uses `Date` for formatting into hours, minutes, and seconds.
+
+---
+
+## 💡 Example Use Cases
+
+- Blog engines displaying estimated reading time.
+- Study planners or learning dashboards.
+- CLI tools for reading efficiency analysis.
+
+---
+
+## 🧪 Testing
+
+You can create your own test file to validate behavior:
+
+```ts
+import { calculateReadTime } from 'calculate-read-time';
+
+const result = calculateReadTime("This is a short article for demo purposes.");
+console.log(result.timeFormat); // "00:00:01" or similar based on length
+```
+
+---
+
+## 📜 License
+
+MIT — feel free to use and contribute!
+
+---
+
+## ✨ Repository and Author
 
 - GitHub Repository: [https://github.com/reza-hadipour/Read-time-calculator](https://github.com/reza-hadipour/Read-time-calculator)
 - Author: Reza Hadipour (<Reza.hadipour2002@gmail.com>)
 
-## License
+If you find this useful, consider giving it a ⭐ on [npmjs.com](https://www.npmjs.com/package/read-time-calculator)
 
-This project is licensed under the MIT License.
+```
+
