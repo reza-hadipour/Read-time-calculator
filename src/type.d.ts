@@ -10,3 +10,8 @@ export declare type departedBaseTimeType= {
     integerPart: number,
     decimalPart: number
 }
+
+export declare type REzaType= {
+    x: number
+    y: string
+}
